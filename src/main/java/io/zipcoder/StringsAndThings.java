@@ -56,7 +56,22 @@ public Integer countYZ(String input){
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+
+        String x = input.replaceAll(" ","");
+
+        int is =0;
+        int not =0;
+        for (int y =0; y<x.length(); y++) {
+            if (y<x.length()-1 && x.charAt(y) == 'i' && x.charAt(y+1) == 's') {
+                is++;
+            } else if (y<x.length()-2 && x.charAt(y) == 'n' && x.charAt(y + 1) == 'o' && x.charAt(y + 2) == 't') {
+                not++;
+            }
+        }
+        System.out.println(is + " " + not);
+        if(is == not ){
+            return true;
+        }return false;
     }
 
     /**
