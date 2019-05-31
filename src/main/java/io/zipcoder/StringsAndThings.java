@@ -82,7 +82,15 @@ public Integer countYZ(String input){
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+
+        input = input.toLowerCase();
+        String x = input.replaceAll(" ","");
+        for (int y= 0; y<x.length(); y++){
+            if(x.charAt(y) == 'g' && x.charAt(y+1) == 'g' ){
+                return true;
+            }
+        }
+        return false;
     }
 
 
