@@ -20,10 +20,16 @@ public class StringsAndThings {
 
 public Integer countYZ(String input){
 
-   input = "";
-   return 1;
-
+   input = input.toLowerCase();
+   String [] words = input.split(" ");
+    int x = 0;
+    for (int y=0; y<words.length; y++) {
+        if (words[y].endsWith("y") || words[y].endsWith("z")) {
+            x++;
+        }
     }
+        return x;
+   }
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
