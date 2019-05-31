@@ -86,7 +86,7 @@ public Integer countYZ(String input){
         input = input.toLowerCase();
         String x = input.replaceAll(" ","");
         for (int y= 0; y<x.length(); y++){
-            if(x.charAt(y) == 'g' && x.charAt(y+1) == 'g' ){
+            if(x.charAt(y) =='g' && x.charAt(y+1) == 'g' ){
                 return true;
             }
         }
@@ -102,6 +102,14 @@ public Integer countYZ(String input){
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        String x= input.toLowerCase();
+        int counter = 0;
+        for (int y = 0; y<x.length(); y++){
+            if(y<x.length()-2 &&(x.charAt(y) == x.charAt(y+1)) && (x.charAt(y) == x.charAt(y+2))){
+                counter++;
+            }
+        }
+        return counter;
     }
+
 }
